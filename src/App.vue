@@ -1,7 +1,8 @@
 <template>
   <h1>I Know Banjo</h1>
-  <div>
+  <div class="options">
     <div id="mode-input">
+      <h2>Mode</h2>
       <div>
         <input type="radio" id="all" name="mode" value="all" v-model="modeSelected">
         <label for="all">All Notes</label>
@@ -21,6 +22,7 @@
       <p>Currently selected: {{ modeSelected }}</p>
     </div>
     <div id="root-input">
+      <h2>Root Note</h2>
       <div>
         <input type="radio" id="c" name="root" value="c" v-model="rootSelected">
         <label for="c">C</label>
@@ -90,7 +92,19 @@
 </script>
 
 <style lang='scss'>
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
   h1 {
     color:black;
+    text-align: center;
+  }
+  .options {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-evenly;
   }
 </style>
