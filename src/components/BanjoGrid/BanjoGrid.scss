@@ -1,0 +1,32 @@
+.banjo-grid {
+  display: grid;
+  grid-template-columns: repeat(25, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  max-width: 1300px;
+
+  &__square {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+
+    &.tab-0 {
+      border-left: 0;
+      border-top: 0;
+      border-bottom: 0;
+    }
+  }
+}
+
+@for $i from 0 through 24 {
+  .tab-#{$i} {
+    grid-column: ($i + 1);
+  }
+}
+
+@for $i from 1 through 5 {
+  .string-#{$i} {
+    grid-row: $i;
+  }
+}
