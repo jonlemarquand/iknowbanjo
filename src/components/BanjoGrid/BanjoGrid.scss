@@ -2,7 +2,10 @@
   display: grid;
   grid-template-columns: repeat(25, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  max-width: 1300px;
+  max-width: 90%;
+  width: 1400px;
+  height: 300px;
+  margin-top: 100px;
 
   &__square {
     border: 1px solid black;
@@ -16,6 +19,16 @@
       border-top: 0;
       border-bottom: 0;
     }
+
+    &.tab-5.string-5 {
+      border-left: 0;
+      border-top: 0;
+      border-bottom: 0;
+    }
+
+    &.string-0 {
+      border: 0;
+    }
   }
 }
 
@@ -25,8 +38,8 @@
   }
 }
 
-@for $i from 1 through 5 {
+@for $i from 0 through 5 {
   .string-#{$i} {
-    grid-row: $i;
+    grid-row: ($i + 1);
   }
 }
